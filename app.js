@@ -1,9 +1,10 @@
-var  express    = require("express"),
-     app        = express();
+var express = require("express");
+var app = express();
 var bodyParser = require("body-parser");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
+app.use(express.static(__dirname + "/public"));
 
 app.get("/", function(req, res){
     res.render("welcome");
@@ -11,7 +12,7 @@ app.get("/", function(req, res){
 
 
 app.get("/home", function(req, res){
-    res.send("home");
+    res.render("dormitory/index");
 });
 
 
