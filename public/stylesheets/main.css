@@ -1,3 +1,29 @@
 .margin_top {
     margin: 100px auto;
 }
+
+hr{
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.thumbnail img {
+  width: 20vw;
+  height: 12.5vw;
+
+}
+.fa-star  {
+    color: #FFD700;
+}
+
+.rating {
+    display: inline-block;
+}
+
+.caption p {
+    text-align: left;
+}
+#buttonline{
+    text-align: center;
+}

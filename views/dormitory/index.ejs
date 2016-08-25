@@ -1,6 +1,6 @@
 <% include ../partials/header %> 
- <div  class="container margin_top" >
-     <header class="jumbotron">
+ <div  class="container " >
+     <header class="jumbotron margin_top">
          <div class="container">
              <h1>Welcome To DormCampus!</h1>
              <p>View Dormitory Around Campus</p>
@@ -9,6 +9,57 @@
              <!--</p>-->
          </div>
      </header>
+     
+     <h3>Recommend</h3>
+     <hr>
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= campground.image %>">
+                   <div class="caption">
+                       <h4><%= campground.name %></h4>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    
+    <h3>ประตู 1</h3>
+     <hr>
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= campground.image %>">
+                   <div class="caption">
+                       <h3><%= campground.name %></h3>
+                       <div class="rating">
+                           <p>
+                           <% for(var i=1 ; i <= 5 ; i++ ){%>
+                               <%if(i <= campground.rating){%>
+                               <i class="fa fa-star "></i>
+                               <% }else {%>
+                               <i class="fa fa-star-o"></i>
+                               <% }%>
+                           <% } %>
+                           </p>
+                       </div>
+                       
+                       <p>ราคา : 4000 - 7000</p>
+                       <p id="buttonline"><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+     
+     
 </div>
+
+
+
+
+
 
 <% include ../partials/footer %>
