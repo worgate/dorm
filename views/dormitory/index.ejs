@@ -13,39 +13,36 @@
      <h3>Recommend</h3>
      <hr>
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% campgrounds.forEach(function(campground){ %>
-            <div class="col-md-3 col-sm-6">
+        <% dormitories.forEach(function(dorm){ %>
+        <% if(dorm.editor == true) {%>
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
-                   <img src="<%= campground.image %>">
+                   
+                   <a href="#"><img  src="<%= dorm.image %>"></a>
                    <div class="caption">
-                       <h4><%= campground.name %></h4>
+                       <h3><%= dorm.name %></h3>
+                       <% include ../partials/show_rating %>
+                       <p>Price : <%=dorm.price %></p>
+                       <p>Address : <%=dorm.address %></p> 
+                       <p id="buttonline"><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                   
                    </div>
                 </div>
             </div>
+             <% }%>
         <% }); %>
     </div>
     
     <h3>ประตู 1</h3>
      <hr>
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% campgrounds.forEach(function(campground){ %>
-            <div class="col-md-3 col-sm-6">
+        <% dormitories.forEach(function(dorm){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
-                   <img src="<%= campground.image %>">
+                   <img src="<%= dorm.image %>">
                    <div class="caption">
-                       <h3><%= campground.name %></h3>
-                       <div class="rating">
-                           <p>
-                           <% for(var i=1 ; i <= 5 ; i++ ){%>
-                               <%if(i <= campground.rating){%>
-                               <i class="fa fa-star "></i>
-                               <% }else {%>
-                               <i class="fa fa-star-o"></i>
-                               <% }%>
-                           <% } %>
-                           </p>
-                       </div>
-                       
+                       <h3><%= dorm.name %></h3>
+                       <% include ../partials/show_rating %>
                        <p>ราคา : 4000 - 7000</p>
                        <p id="buttonline"><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                    </div>
@@ -56,10 +53,4 @@
      
      
 </div>
-
-
-
-
-
-
 <% include ../partials/footer %>

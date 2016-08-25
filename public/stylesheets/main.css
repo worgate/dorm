@@ -9,13 +9,24 @@ hr{
 }
 
 .thumbnail img {
-  width: 20vw;
-  height: 12.5vw;
+  width: 100%;
+  height: 100%;
 
 }
 .fa-star  {
     color: #FFD700;
 }
+
+.caption p {
+    line-height: 90%;
+}
+
+
+
+.fa-star-o {
+    color: 	rgba(128, 128, 128,0.4);
+}
+
 
 .rating {
     display: inline-block;
@@ -26,4 +37,14 @@ hr{
 }
 #buttonline{
     text-align: center;
+}
+
+img {
+    opacity: 0.9;
+   
+}
+
+img:hover {
+    opacity: 1.0;
+    
 }
