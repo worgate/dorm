@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var Dormitory = require("./models/dormitory");
 var data = [
     {
-           name: "ASDASDASD ASDASD",
+           name: "พัทธนันท์ ปาร์ค",
            image: "http://www.renthub.in.th/images/uploaded/201404/20140410/apartment_pictures/normal/f616eb915353d27bee85133b7f041a13.jpg?1397146898",
            description: "Good Place",
            price : "5000 - 7000",
@@ -11,7 +11,7 @@ var data = [
            editor : true
     },
     {
-           name: "ASDASDASD ASDASD",
+           name: "พัทธนันท์ ปาร์ค",
            image: "https://farm9.staticflickr.com/8442/7962474612_bf2baf67c0.jpg",
            description: "Good Place",
            price : "5000 - 7000",
