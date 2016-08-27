@@ -36,7 +36,10 @@ app.get("/sut", function(req, res){
     });
 
 });
-
+app.get("/sut/create", function(req, res){
+    //find the campground with provided ID
+    res.send("create form");
+});
 
 app.get("/sut/:id", function(req, res){
     //find the campground with provided ID
@@ -48,11 +51,7 @@ app.get("/sut/:id", function(req, res){
             res.render("dormitory/show", {dormitory: foundDormitory});
         }
     });
-})
-
-
-
-
+});
 
 
 
