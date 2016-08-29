@@ -1,26 +1,53 @@
 <% include ../partials/header %>
 <div class="container margin_top">
-
     <h1><%=dormitory.name%></a></h1>
+    <h5>by.QQQ</h5>
     <hr class="style-two">
     <div class="row">
         <div class="col-md-8">
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= dormitory.image %>">
-                <div class="caption-full">
-                    <h4 class="pull-right">$9.00/night</h4>
+                <div class="caption-full" >
+                    <div class="pull-right">
+                        <p><% include ../partials/show_rating %> <a><span style="color: green;"><%=dormitory.comments.length %> User review's</span></a></p>
+                      
+                    </div>
+                    
                     <h4><a><%=dormitory.name%></a></h4>
+                    
                     <p><%= dormitory.description %></p>
+                    
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <p class="lead">YelpCamp</p>
             
-            <div>
-                <div id="map"> </div>
+              <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/sut/<%= dormitory._id %>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                <% dormitory.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                          
+                            <strong><%=  comment.author %></strong>
+                            <span class="pull-right">10 days ago</span>
+                            <p>
+
+                                <%= comment.text %> 
+                            </p>
+                        </div>
+                    </div>
+                <% }) %>
             </div>
             
+            
+        </div>
+        <div id ="rcorners2" class="col-md-4" style="background-color: 	rgba(128, 128, 128,0.1);">
+            <!--<p class="lead">YelpCamp</p>-->
+            <div id="mapbox">
+                <div id="map" ></div>
+            </div>
+            <p>699 ถ พัทธ นั น ท์ หมู่ 5 สุรนารี เมือง Nakhon Ratchasima 30000, Thailand</p>
             <div class="list-group">
                 <li class="list-group-item active">Info 1</li>
                 <li class="list-group-item">Info 2</li>
@@ -28,33 +55,10 @@
             </div>
         </div>        
     </div>
-</div>
+</div> 
 
-<script>
-      var map;
-      function initMap() {
-
-         var myLatLng = {lat: 14.885471, lng: 102.019597};
-         
-        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: myLatLng
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!',
-          icon: image
-        });
-        
-        var url = "http://maps.google.com/?ll="+myLatLng.lat+", "+myLatLng.lng;
-        
-         marker.addListener('click', function() {
-          window.open(url,"_self")
-        });
-      }
+    <script src="/js/google_map.js">
+        initMap();
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXnuKhOYLoVmaEHPUzY4u-QUU-rHWaGHg&callback=initMap"
     async defer></script>

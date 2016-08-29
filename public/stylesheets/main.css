@@ -17,6 +17,12 @@ hr{
     color: #FFD700;
 }
 
+.container{
+    /*width: 94%;*/
+    /*margin-left: 2%;*/
+    /*margin-right: 2%;*/
+}
+
 .caption p {
     line-height: 90%;
 }
@@ -58,6 +64,16 @@ hr.style-two {
 #map {
         height: 200px;
         width: 100%;
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+
+}
+
+#mapbox {
+    margin-top: 10px;
 }
       
       

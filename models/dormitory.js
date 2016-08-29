@@ -6,7 +6,15 @@ var dormitorySchema = new mongoose.Schema({
    price : String,
    address : String,
    rating : Number,
-   editor : Boolean
+   editor : Boolean,
+   comments: [
+      {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "Comment"
+      }
+   ]
+   
+   
 });
 
 module.exports = mongoose.model("Dormitory", dormitorySchema);

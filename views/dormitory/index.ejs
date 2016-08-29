@@ -2,8 +2,8 @@
  <div  class="container " >
      <header class="jumbotron margin_top">
          <div class="container">
-             <h1>Welcome To DormCampus!</h1>
-             <p>View Dormitory Around Campus</p>
+             <h1>Welcome To dormitoryCampus!</h1>
+             <p>View dormitoryitory Around Campus</p>
              <!--<p>-->
              <!--   <a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Campground</a>-->
              <!--</p>-->
@@ -13,16 +13,16 @@
      <h3>Recommend</h3>
      <hr>
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% dormitories.forEach(function(dorm){ %>
-        <% if(dorm.editor == true) {%>
+        <% dormitoryitories.forEach(function(dormitory){ %>
+        <% if(dormitory.editor == true) {%>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
-                   <a href="/sut/<%= dorm._id %>"><img  src="<%= dorm.image %>"></a>
+                   <a href="/sut/<%= dormitory._id %>"><img  src="<%= dormitory.image %>"></a>
                    <div class="caption">
-                       <h3><%= dorm.name %></h3>
+                       <h3><%= dormitory.name %></h3>
                        <% include ../partials/show_rating %>
-                       <p>Price : <%=dorm.price %></p>
-                       <p>Address : <%=dorm.address %></p> 
+                       <p>Price : <%=dormitory.price %></p>
+                       <p>Address : <%=dormitory.address %></p> 
                        <p id="buttonline"><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                    
                    </div>
@@ -35,12 +35,12 @@
     <h3>ประตู 1</h3>
      <hr>
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% dormitories.forEach(function(dorm){ %>
+        <% dormitoryitories.forEach(function(dormitory){ %>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
-                   <img src="<%= dorm.image %>">
+                   <img src="<%= dormitory.image %>">
                    <div class="caption">
-                       <h3><%= dorm.name %></h3>
+                       <h3><%= dormitory.name %></h3>
                        <% include ../partials/show_rating %>
                        <p>ราคา : 4000 - 7000</p>
                        <p id="buttonline"><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
