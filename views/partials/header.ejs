@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dorm Campus</title>
 	<link rel="shortcut icon" href="http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png" type="image/x-icon">
   <link rel="icon" href="http://design.ubuntu.com/wp-content/uploads/ubuntu-logo32.png" type="image/x-icon">
   
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 	<script src="https://use.fontawesome.com/78fd4bb140.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/stylesheets/main.css"></link>
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Dorm Campus</a>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>  
+                <a class="navbar-brand" href="/sut">Dorm Campus</a>
             </div>
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/sut">Home</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
+
+
                 <ul class="nav navbar-nav navbar-right">
                     <% if(!currentUser){ %>
                         <li><a href="/login">Login</a></li>

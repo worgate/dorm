@@ -13,7 +13,7 @@
      <h3>Recommend</h3>
      <hr>
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% dormitoryitories.forEach(function(dormitory){ %>
+        <% dormitories.forEach(function(dormitory){ %>
         <% if(dormitory.editor == true) {%>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
@@ -35,7 +35,7 @@
     <h3>ประตู 1</h3>
      <hr>
      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% dormitoryitories.forEach(function(dormitory){ %>
+        <% dormitories.forEach(function(dormitory){ %>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
                    <img src="<%= dormitory.image %>">
