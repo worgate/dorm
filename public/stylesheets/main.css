@@ -14,20 +14,24 @@ hr{
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
-.thumbnail img {
-  width: 100%;
-  height: 100%;
 
+
+.showImage {
+  width: auto;
+  max-height: 25em;
 }
+
+.img-responsive {
+    display: block;
+    width: auto;
+    max-height: 15em;
+}
+
 .fa-star  {
     color: #FFD700;
 }
 
-.container{
-    /*width: 94%;*/
-    /*margin-left: 2%;*/
-    /*margin-right: 2%;*/
-}
+
 
 .caption p {
     line-height: 90%;

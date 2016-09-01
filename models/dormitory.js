@@ -7,6 +7,13 @@ var dormitorySchema = new mongoose.Schema({
    address : String,
    rating : Number,
    editor : Boolean,
+   author: {
+      id: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "User"
+      },
+      username: String
+   },
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,

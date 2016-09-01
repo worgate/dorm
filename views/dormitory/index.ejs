@@ -17,7 +17,7 @@
         <% if(dormitory.editor == true) {%>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
-                   <a href="/sut/<%= dormitory._id %>"><img  src="<%= dormitory.image %>"></a>
+                   <a href="/sut/<%= dormitory._id %>"><img class="img-responsive" src="<%= dormitory.image %>"></a>
                    <div class="caption">
                        <h3><%= dormitory.name %></h3>
                        <% include ../partials/show_rating %>
@@ -38,7 +38,7 @@
         <% dormitories.forEach(function(dormitory){ %>
             <div class="col-lg-3 col-md-4 col-sm-6">
                 <div class="thumbnail">
-                   <img src="<%= dormitory.image %>">
+                   <a href="/sut/<%= dormitory._id %>"><img class="img-responsive" src="<%= dormitory.image %>"></a>
                    <div class="caption">
                        <h3><%= dormitory.name %></h3>
                        <% include ../partials/show_rating %>

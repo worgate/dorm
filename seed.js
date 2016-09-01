@@ -2,13 +2,18 @@ var mongoose = require("mongoose");
 var Dormitory = require("./models/dormitory");
 var data = [
     {
+        
            name: "พัทธนันท์ ปาร์ค",
            image: "http://www.renthub.in.th/images/uploaded/201404/20140410/apartment_pictures/normal/f616eb915353d27bee85133b7f041a13.jpg?1397146898",
            description: "Good Place",
            price : "5000 - 7000",
            address : "มทส. ประตู 4",
            rating : "4",
-           editor : true
+           editor : true,
+           author : {
+                    id: "57c7f9953bd4afb609bcd8f8",
+                    username: "qqq"
+           }
     },
     {
            name: "พัทธนันท์ ปาร์ค",
@@ -17,7 +22,11 @@ var data = [
            price : "5000 - 7000",
            address : "มทส. ประตู 4",
            rating : "4",
-           editor : true
+           editor : true,
+           author : {
+                    id: "57c7f9953bd4afb609bcd8f8",
+                    username: "qqq"
+           }
     },
     {
             name: "ASDASDASD ASDASD",
@@ -26,7 +35,11 @@ var data = [
            price : "5000 - 7000",
            address : "มทส. ประตู 4",
            rating : "4",
-           editor : false
+           editor : false,
+           author : {
+                    id: "57c7f9953bd4afb609bcd8f8",
+                    username: "qqq"
+           }
     }
 ]
 
