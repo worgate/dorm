@@ -65,6 +65,11 @@ img:hover {
     
 }
 
+#delete-form {
+    display: inline;
+}
+
+
 hr.style-two {
     border: 0;
     height: 1px;

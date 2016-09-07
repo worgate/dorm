@@ -11,11 +11,11 @@
                 <div class="caption-full" >
                     <div class="pull-right">
                         <p><% include ../partials/show_rating %> <a><span style="color: green;"><%=dormitory.comments.length %> User review's</span></a></p>
-                      
                     </div>
                     
                     <h4><a><%=dormitory.name%></a></h4>
                     <% if(currentUser && dormitory.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-xs btn-warning" href="/sut/<%= dormitory._id %>/edit">Edit</a>
                         <form id="delete-form" action="/sut/<%= dormitory._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger">Delete</button>
                         </form>
@@ -34,12 +34,19 @@
                     <div class="row">
                         <div class="col-md-12">
                           
-                            <strong><%=  comment.author %></strong>
+                            <strong><%=comment.author.username %></strong>
                             <span class="pull-right">10 days ago</span>
                             <p>
-
-                                <%= comment.text %> 
+                              <%= comment.text %> 
                             </p>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a class="btn btn-xs btn-warning" 
+                               href="/sut/<%=dormitory._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                               
+                            <form id="delete-form" action="/sut/<%=dormitory._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                            </form>
+                          <% } %>
                         </div>
                     </div>
                 <% }) %>

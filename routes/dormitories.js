@@ -1,7 +1,7 @@
 var express = require("express");
 var router  = express.Router();
 var Dormitory = require("../models/dormitory");
-
+var middleware = require("../middleware");
 // /sut/
 
 
@@ -16,7 +16,21 @@ router.get("/", function(req, res){
 
 });
 
-router.post("/",isLoggedIn, function(req, res){
+
+router.get("/:id", function(req, res){
+    //find the campground with provided ID
+    Dormitory.findById(req.params.id).populate("comments").exec(function(err, foundDormitory){
+        if(err){
+            console.log(err);
+        } else {
+            
+            
+            res.render("dormitory/show", {dormitory: foundDormitory});
+        }
+    });
+});
+
+router.post("/", middleware.isLoggedIn, function(req, res){
 
         var name = req.body.name;
         var image = req.body.image;
@@ -50,25 +64,14 @@ router.post("/",isLoggedIn, function(req, res){
             });
 });
 
-router.get("/new",isLoggedIn, function(req, res){
+router.get("/new", middleware.isLoggedIn, function(req, res){
     //find the campground with provided ID
     res.render("dormitory/new");
 });
 
-router.get("/:id", function(req, res){
-    //find the campground with provided ID
-    Dormitory.findById(req.params.id).populate("comments").exec(function(err, foundDormitory){
-        if(err){
-            console.log(err);
-        } else {
-            
-            
-            res.render("dormitory/show", {dormitory: foundDormitory});
-        }
-    });
-});
 
-router.delete("/:id", function(req, res){
+
+router.delete("/:id", middleware.checkDormOwnership ,function(req, res){
    Dormitory.findByIdAndRemove(req.params.id, function(err){
       if(err){
           res.redirect("/sut");
@@ -77,6 +80,34 @@ router.delete("/:id", function(req, res){
       }
    });
 });
+
+// EDIT CAMPGROUND ROUTE
+router.get("/:id/edit", middleware.checkDormOwnership , function(req, res){
+    Dormitory.findById(req.params.id, function(err, foundDormitory){
+        res.render("dormitory/edit", {dormitory: foundDormitory});
+    });
+});
+
+// UPDATE CAMPGROUND ROUTE
+router.put("/:id", middleware.checkDormOwnership , function(req, res){
+    // find and update the correct campground
+    Dormitory.findByIdAndUpdate(req.params.id, req.body.dormitory, function(err, updatedDormitory){
+       if(err){
+           res.redirect("/sut");
+       } else {
+           //redirect somewhere(show page)
+           res.redirect("/sut/" + req.params.id);
+       }
+    });
+});
+
+
+
+
+
+
+
+
 
 
 function isLoggedIn(req, res, next){
