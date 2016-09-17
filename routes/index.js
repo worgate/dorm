@@ -47,4 +47,26 @@ router.get("/logout", function(req, res){
    res.redirect("/sut");
 });
 
+
+router.get("/pwd", function(req, res){
+   var  newPasswordString = 'aaa';
+   User.findByUsername('qqq').then(function(sanitizedUser){
+    if (sanitizedUser){
+        sanitizedUser.setPassword(newPasswordString, function(){
+            sanitizedUser.save();
+            res.status(200).json({message: 'password reset successful'});
+        });
+    } else {
+        res.status(500).json({message: 'This user does not exist'});
+    }
+},function(err){
+    console.error(err);
+})
+});
+
+
+
+
+
+
 module.exports = router;
